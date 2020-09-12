@@ -1,7 +1,7 @@
 import React,{useRef, useEffect} from 'react';
-import logo from './logo.svg';
+
 import './App.css';
-import Canvas from './canvas.component'
+
 import Navigation from "./navigation.component";
 import {ButtonGroup, Button} from '@material-ui/core'
 import Grid from '@material-ui/core/Grid';
@@ -30,8 +30,8 @@ function App() {
   let drawnLines = []
   let currX =0
   let currY =0
-  let prevX =0
-  let prevY =0
+  // let prevX =0
+  // let prevY =0
   let lineClicks = []
   function handleMouseDown() {
     console.log(`Il tool corrente è ${selectedTool}`)
@@ -46,16 +46,16 @@ function App() {
   }
   function findxy(res, e) {
     const canvas = document.getElementById('can');
-    prevX = currX;
-    prevY = currY;
+    // prevX = currX;
+    // prevY = currY;
     currX = e.clientX - canvas.offsetLeft;
     currY = e.clientY - canvas.offsetTop;
   }
   function init() {
     const canvas = document.getElementById('can');
-    const ctx = canvas.getContext("2d");
-    const w = canvas.width;
-    const h = canvas.height;
+    // const ctx = canvas.getContext("2d");
+    // const w = canvas.width;
+    // const h = canvas.height;
 
     canvas.addEventListener("mousemove", function (e) {
       findxy('move', e)
